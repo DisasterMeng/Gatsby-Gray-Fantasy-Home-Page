@@ -5,5 +5,5 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby-Gray-FANTASY-HOME-PAGE
+  Gatsby-Gray-Fantasy-Home-Page
 </h1>
