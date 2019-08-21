@@ -33,7 +33,7 @@ const renderFunItem = (item, index) => (
 export default () => (
     <Layout>
         <div className={styles.homeContainer}>
-            <div className={styles.displayContainer}>
+            <div id='display' className={styles.displayContainer}>
                 <div className={styles.displayTextContainer}>
                     <p className={styles.displayTitle}>Introduce</p>
                     <p className={styles.displaySecondTitle}>A simple blog based on the separation of Django and Vue.</p>
@@ -46,7 +46,7 @@ export default () => (
                 <p>Cdkfjkdfdfdello ></p>
             </div>
 
-            <div className={styles.funContainer}>
+            <div id='about'  className={styles.funContainer}>
                 {functions.map((item, index) => renderFunItem(item, index))}
             </div>
 

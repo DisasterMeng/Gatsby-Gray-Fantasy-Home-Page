@@ -3,19 +3,44 @@ import { Link } from "gatsby"
 
 import styles from './header.module.styl'
 
-export default () => (
 
-    <div className={styles.headerContainer}>
+export default class Header extends React.Component {
 
-        <p className={styles.title}>GrayFantasy</p>
 
-        <ul className={styles.tabLayout}>
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to='/contribution'>Contribution</Link></li>
-            <li><Link to='/about'>About</Link></li>
-            <li><Link to='/github'>Github</Link></li>
-        </ul>
+    constructor(props) {
+        super(props)
+        this.state = { active: 'display' }
+    }
 
-    </div>
+    linkClickHandler(link) {
+        this.setState((state)=>({active:link}))
+    }
 
-)
+    render() {
+        return (
+
+            <div className={styles.headerContainer}>
+
+                <p className={styles.title}>GrayFantasy</p>
+                
+                <ul className={styles.tabLayout}>
+                    <li className={this.state.active==='display'?styles.active:''}>
+                        <a href='#display' onClick={()=>this.linkClickHandler('display')}>About</a>
+                    </li>
+                    <li className={this.state.active==='contribution'?styles.active:''}>
+                        <a href='#contribution' onClick={()=>this.linkClickHandler('contribution')}>Contribution</a>
+                    </li>
+                    <li className={this.state.active==='about'?styles.active:''}>
+                        <a href='#about' onClick={()=>this.linkClickHandler('about')}>About</a>
+                    </li>
+                    <li className={this.state.active==='github'?styles.active:''}>
+                        <a href='#github' onClick={()=>this.linkClickHandler('github')}>Github</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        )
+    }
+}
+
