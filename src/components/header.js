@@ -25,7 +25,7 @@ export default class Header extends React.Component {
                 
                 <ul className={styles.tabLayout}>
                     <li className={this.state.active==='display'?styles.active:''}>
-                        <a href='#display' onClick={()=>this.linkClickHandler('display')}>About</a>
+                        <a href='#display' onClick={()=>this.linkClickHandler('display')}>Home</a>
                     </li>
                     <li className={this.state.active==='contribution'?styles.active:''}>
                         <a href='#contribution' onClick={()=>this.linkClickHandler('contribution')}>Contribution</a>
